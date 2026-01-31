@@ -1,0 +1,38 @@
+Column_Name,Data_Type,Description,Range
+SK_ID_CURR,int64,Unique client identifier,100000-149999
+TARGET,int64,"Target variable (1 = default, 0 = repaid)",0 or 1
+RISK_SCORE,float64,"Composite risk score (0-1, higher = riskier)",0.0-1.0
+CODE_GENDER,object,Gender (M/F),"M, F"
+AGE,int64,Age in years,21-70
+DAYS_BIRTH,int64,Days from birth (negative value),-25550 to -7665
+CNT_CHILDREN,int64,Number of children,0-5
+CNT_FAM_MEMBERS,int64,Number of family members,1-7
+NAME_EDUCATION_TYPE,object,Education level,Categorical
+NAME_HOUSING_TYPE,object,Housing type,Categorical
+OCCUPATION_TYPE,object,Occupation category,Categorical
+AMT_INCOME_TOTAL,float64,Annual income (currency units),25000-1000000
+AMT_CREDIT,float64,Credit amount requested,20000-2000000
+AMT_ANNUITY,float64,Loan annuity amount,Varies
+DAYS_EMPLOYED,int64,Days employed (negative value),-15000 to 0
+avg_weekly_transactions,float64,Average number of transactions per week,2-70
+transaction_frequency_std_dev,float64,Standard deviation of weekly transactions,0.5-25
+entropy_merchant_categories,float64,Entropy of spending across merchant categories (0-1),0.0-1.0
+income_regularity_score,float64,"Income regularity score (0-1, higher = more regular)",0.05-0.98
+primary_income_frequency,object,"Detected pay cycle (monthly, bi-weekly, weekly, irregular)",Categorical
+months_with_income_last_6,int64,Number of months with income in last 6 months (0-6),0-6
+days_until_paycheck_at_bill_due,float64,Days until paycheck when bill is due (buffer),-30 to 30
+avg_time_to_clear_checks,float64,Average days to clear checks,0.5-10
+recurring_payment_ontime_rate,float64,Recurring payment on-time rate (0-1),0.1-1.0
+mobile_wallet_active_months,float64,Months since first mobile wallet usage,0-48
+avg_mobile_wallet_balance,float64,Average stored value in mobile wallet,0-50000
+P2P_transaction_ratio,float64,Ratio of P2P transactions to total (0-1),0.0-0.8
+utility_bill_ontime_rate,float64,Utility bill on-time payment rate (0-1),0.2-1.0
+subscription_cancellation_rate,float64,Subscription cancellation rate (0-1),0.0-0.6
+has_consistent_internet_payment,int64,Has consistent internet payment (0/1),0 or 1
+savings_rate,float64,Savings rate as % of income (0-1),0.0-0.5
+has_automatic_savings_transfer,int64,Has automatic savings transfer (0/1),0 or 1
+savings_balance_growth_trend,float64,Monthly % change in savings balance,-0.15 to 0.15
+cash_flow_volatility_index,float64,Cash flow volatility index (higher = more volatile),0.05-2.0
+avg_end_of_month_balance,float64,Average end-of-month balance as % of income (0-1),0.0-0.6
+dynamic_dti_last_6m,float64,DTI trend slope over last 6 months (positive = worsening),-0.15 to 0.25
+income_vs_expenses_trend,float64,Income vs expenses trend (positive = improving),-0.20 to 0.20
